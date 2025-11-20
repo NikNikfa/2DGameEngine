@@ -32,11 +32,8 @@ namespace MyEngine
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // Building simple texture for player
-            _playerTexture = new Texture2D(GraphicsDevice, 50, 50);
-            Color[] data = new Color[50 * 50];
-            for (int i = 0; i < data.Length; i++) data[i] = Color.Red;
-            _playerTexture.SetData(data);
+            AssetLoader.Initialize(Content);
+            _playerTexture = AssetLoader.LoadTexture("Player");
 
             _player = new Player(_playerTexture, new Vector2(200, 200));
         }

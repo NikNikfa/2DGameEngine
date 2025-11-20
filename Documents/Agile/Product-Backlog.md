@@ -20,6 +20,10 @@ Stories are prioritized and tracked across sprints.
 | US8  | As a developer, I want the engine to support pausing and resuming the game so that gameplay can be controlled.                   | Low      | Pending |
 | US9  | As a developer, I want the engine to be modular so that new features can be added without rewriting core systems.                | High     | Pending |
 | US10 | As a developer, I want clear documentation for all modules so that future developers can understand and extend the engine.       | High     | Pending |
+|      |                                                                                                                                  |          |         |
+|      |                                                                                                                                  |          |         |
+|      |                                                                                                                                  |          |         |
+|      |                                                                                                                                  |          |         |
 
 ---
 
