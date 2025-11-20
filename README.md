@@ -19,18 +19,6 @@ The engine provides a modular foundation for building 2D games, with a focus on 
 
 ---
 
-## 📂 Project Structure
-
-2DGameEngine/
-│
-├── ProjectInfo/ # Vision, goals, overview
-├── Agile/ # Product backlog, sprint logs
-├── Design/ # System design and architecture diagrams
-├── Implementation/ # EngineTime, InputManager, Player, Game1
-└── Assets/ # Textures, sounds, and other game assets
-
----
-
 ## 🛠 Technology Stack
 - C#  
 - MonoGame Framework  
