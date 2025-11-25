@@ -11,8 +11,10 @@ namespace MyEngine
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        private EntityManager _entityManager;
+
         private Player _player;
-        private Texture2D _playerTexture;
+     
 
         public Game1()
         {
@@ -25,6 +27,7 @@ namespace MyEngine
         {
             // TODO: Add your initialization logic here
 
+            _entityManager = new EntityManager();
             base.Initialize();
         }
 
@@ -33,24 +36,26 @@ namespace MyEngine
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             AssetLoader.Initialize(Content);
-            _playerTexture = AssetLoader.LoadTexture("Player");
+            var playerTexture = AssetLoader.LoadTexture("Player");
+            _player = new Player(playerTexture, new Vector2(200, 200));
 
-            _player = new Player(_playerTexture, new Vector2(200, 200));
+            _entityManager.Add(_player);
         }
 
         protected override void Update(GameTime gameTime)
         {
+            // 1. Update engine time
+            EngineTime.Update(gameTime);
 
-            EngineTime.Update(gameTime); //Update Time
+            // 2. Update input system
+            InputManager.Update();
 
-            InputManager.Update(); //Update Inputs
-
-            //using InputManager instead of Keyboard.GetState()
+            // 3. Global shortcuts
             if (InputManager.IsKeyPressed(Keys.Escape))
                 Exit();
 
-            _player.Update();
-
+            // 4. Update all entities (Player, Enemy, NPCs, etc.)
+            _entityManager.Update(gameTime);
 
             base.Update(gameTime);
         }

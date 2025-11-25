@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Design/High-Level Architecture.md",
+                "file": "Implementation/Core/EntityManager.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "High-Level Architecture"
+              "title": "EntityManager"
             }
           }
         ],
@@ -251,24 +251,28 @@
       "bases:Create new base": false
     }
   },
-  "active": "c8bd07c1b3850d07",
+  "active": "5533a13c827cf362",
   "lastOpenFiles": [
+    "Implementation/Entities/Entity.md",
+    "Implementation/Core/EntityManager.md",
+    "Implementation/Entities",
+    "Implementation/Core",
+    "Design/High-Level Architecture.md",
     "Images",
     "Images/High-Level Architecture-UML.png",
-    "Implementation/AssetLoader.md",
-    "Design/High-Level Architecture.md",
+    "Implementation/Core/AssetLoader.md",
     "SpriteBatch.md",
     "Project-Info/Goals.md",
     "Project-Info/Vision.md",
     "Agile/Sprint-1.md",
     "Agile/Product-Backlog.md",
-    "Implementation/EngineTime.md",
-    "Implementation/Player.md",
+    "Implementation/Core/EngineTime.md",
+    "Implementation/Entities/Player.md",
     "Concepts/SOLID.md",
     "Concepts/Dependency inversion Principle.md",
     "Concepts/Single responsibility Principle.md",
     "Concepts/Decoupled.md",
-    "Implementation/InputManager.md",
+    "Implementation/Core/InputManager.md",
     "Implementation/Game1.md",
     "Project-Info/README.md",
     "Concepts/Untitled.md",

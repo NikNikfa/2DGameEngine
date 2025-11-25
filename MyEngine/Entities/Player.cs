@@ -10,41 +10,19 @@ using MyEngine.Core;
 
 namespace MyEngine.Entities
 {
-    public class Player
+    public class Player : Entity
     {
-        private Texture2D _texture;
-        private Vector2 _position;
-        private float _speed = 200f; // PPS
-
-        public Player(Texture2D texture, Vector2 startPosition)
+        public Player(Texture2D texture, Vector2 position)
+            : base(texture, position)
         {
-            _texture = texture;
-            _position = startPosition;
         }
 
-        public void Update()
+        public override void Update(GameTime gameTime)
         {
-            Vector2 direction = Vector2.Zero;
-
-            if (InputManager.IsKeyDown(Keys.Up))
-                direction.Y -= 1;
-            if (InputManager.IsKeyDown(Keys.Down))
-                direction.Y += 1;
-            if (InputManager.IsKeyDown(Keys.Left))
-                direction.X -= 1;
-            if (InputManager.IsKeyDown(Keys.Right))
-                direction.X += 1;
-
-            if (direction != Vector2.Zero)
-                direction.Normalize(); // 
-
-            _position += direction * _speed * EngineTime.DeltaTime;
+            // اینجا بعداً InputManager را صدا می‌زنیم و حرکت Player را می‌نویسیم
         }
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(_texture, _position, Color.White);
-        }
-
+        // Draw لازم نیست اگر همان رفتار Entity کافی است
+        // اگر خواستی افکت خاصی داشته باشی، می‌توانی override کنی
     }
 }
