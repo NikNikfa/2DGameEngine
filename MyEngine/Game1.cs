@@ -65,7 +65,7 @@ namespace MyEngine
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin();
-            _player.Draw(_spriteBatch);
+            _entityManager.Draw(_spriteBatch);
             _spriteBatch.End();
 
             base.Draw(gameTime);
