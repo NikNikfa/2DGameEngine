@@ -12,6 +12,8 @@ namespace MyEngine.Entities
 {
     public class Player : Entity
     {
+        private float _speed = 200f; // units per second
+
         public Player(Texture2D texture, Vector2 position)
             : base(texture, position)
         {
@@ -19,10 +21,31 @@ namespace MyEngine.Entities
 
         public override void Update(GameTime gameTime)
         {
-            // اینجا بعداً InputManager را صدا می‌زنیم و حرکت Player را می‌نویسیم
+            Vector2 direction = Vector2.Zero;
+
+            // Horizontal input
+            if (InputManager.IsKeyDown(Keys.A) || InputManager.IsKeyDown(Keys.Left))
+                direction.X -= 1f;
+
+            if (InputManager.IsKeyDown(Keys.D) || InputManager.IsKeyDown(Keys.Right))
+                direction.X += 1f;
+
+            // Vertical input
+            if (InputManager.IsKeyDown(Keys.W) || InputManager.IsKeyDown(Keys.Up))
+                direction.Y -= 1f;
+
+            if (InputManager.IsKeyDown(Keys.S) || InputManager.IsKeyDown(Keys.Down))
+                direction.Y += 1f;
+
+            // Normalize to avoid faster diagonal movement
+            if (direction != Vector2.Zero)
+            {
+                direction.Normalize();
+                Position += direction * _speed * EngineTime.DeltaTime;
+            }
+
         }
 
-        // Draw لازم نیست اگر همان رفتار Entity کافی است
-        // اگر خواستی افکت خاصی داشته باشی، می‌توانی override کنی
-    }
+    /
+}
 }

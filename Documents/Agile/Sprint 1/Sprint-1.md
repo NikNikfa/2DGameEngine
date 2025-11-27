@@ -26,7 +26,7 @@ Establish the core architecture and foundational systems of the 2D Game Engine, 
 
 ### **1. EngineTime Implementation**
 
-Linked Document: `[[S1-EngineTime]]`
+Linked Document: [[S1-EngineTime]]
 
 - Implemented a timing system that calculates `DeltaTime` each frame.
     
@@ -43,7 +43,7 @@ Linked Document: `[[S1-EngineTime]]`
 
 ### **2. InputManager Implementation**
 
-Linked Document: `[[S1-InputManager]]`
+Linked Document: [[S1-InputManager]]
 
 - Handles keyboard state retrieval using `Keyboard.GetState()` (MonoGame).
     
@@ -58,7 +58,7 @@ Linked Document: `[[S1-InputManager]]`
 
 ### **3. Player Class Implementation**
 
-Linked Document: `[[S1-Player]]`
+Linked Document: [[S1-Player]]
 
 - Implemented a basic player entity containing position, speed, and texture.
     
@@ -75,7 +75,7 @@ Linked Document: `[[S1-Player]]`
 
 ### **4. Game1 Integration**
 
-Linked Document: `[[S1-Game1]]`
+Linked Document: [[S1-Game1]]
 
 - Integrated EngineTime, InputManager, and Player into the main loop.
     
