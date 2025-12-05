@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Agile/Sprint 3/S3-Camera2D.md",
+                "file": "Architecture/ECS Architecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "S3-Camera2D"
+              "title": "ECS Architecture"
             }
           },
           {

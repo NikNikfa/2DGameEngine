@@ -16,6 +16,7 @@ The engine provides a modular foundation for building 2D games, with a focus on 
 
 ## 🏗 Architecture
 
+The 2D Game Engine is structured around a modular, layered architecture designed to support clarity, extensibility, and long-term maintainability. Each core subsystem is isolated behind clear abstractions to reduce coupling and enable independent development. The architecture follows key software design principles including SOLID, composition over inheritance, and separation of concerns.
 
 ---
 
