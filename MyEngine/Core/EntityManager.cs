@@ -42,11 +42,10 @@ namespace MyEngine.Core
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (var entity in _entities)
+            foreach (var entity in _entities
+                .Where(e => e.IsActive)
+                .OrderBy(e => e.Layer))
             {
-                if (!entity.IsActive)
-                    continue;
-
                 entity.Draw(spriteBatch);
             }
         }

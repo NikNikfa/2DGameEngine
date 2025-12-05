@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using MyEngine.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace MyEngine.Entities
 {
@@ -16,10 +17,16 @@ namespace MyEngine.Entities
 
         public bool IsActive { get; set; } = true;
 
+        public RenderLayer Layer { get; set; }
+
+
         protected Entity(Texture2D texture, Vector2 position)
         {
             Texture = texture;
             Position = position;
+
+            // Default: most entities are in the world layer
+            Layer = RenderLayer.World;
         }
 
         public virtual void Update(GameTime gameTime)

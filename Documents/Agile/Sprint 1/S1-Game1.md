@@ -1,7 +1,7 @@
 
 ## **1. Summary of Implementation**
 
-- Fully integrated **EngineTime**, **InputManager**, and **Player** into the `Game1` class.
+- Fully integrated **EngineTime**, **InputManager**, and **Player** into the [[2. Game1]] class.
     
 - Implemented a **sequential and deterministic update loop**:
     

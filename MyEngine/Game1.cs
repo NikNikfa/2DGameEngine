@@ -9,12 +9,12 @@ namespace MyEngine
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
 
         private EntityManager _entityManager;
-
         private Player _player;
-     
+        private Camera2D _camera;
+
+
 
         public Game1()
         {
@@ -28,12 +28,15 @@ namespace MyEngine
             // TODO: Add your initialization logic here
 
             _entityManager = new EntityManager();
+
+            _camera = new Camera2D();
+
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            Renderer.Initialize(GraphicsDevice);
 
             AssetLoader.Initialize(Content);
             var playerTexture = AssetLoader.LoadTexture("Player");
@@ -57,16 +60,22 @@ namespace MyEngine
             // 4. Update all entities (Player, Enemy, NPCs, etc.)
             _entityManager.Update(gameTime);
 
+            // Simple follow: center camera on player
+            _camera.Position = _player.Position;
+
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            Renderer.Clear(Color.CornflowerBlue);
 
-            _spriteBatch.Begin();
-            _entityManager.Draw(_spriteBatch);
-            _spriteBatch.End();
+            var viewMatrix = _camera.GetViewMatrix(GraphicsDevice.Viewport);
+
+
+            Renderer.Begin(viewMatrix);
+            _entityManager.Draw(Renderer.SpriteBatch);
+            Renderer.End();
 
             base.Draw(gameTime);
         }

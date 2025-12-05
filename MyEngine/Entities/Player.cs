@@ -17,6 +17,7 @@ namespace MyEngine.Entities
         public Player(Texture2D texture, Vector2 position)
             : base(texture, position)
         {
+            Layer = RenderLayer.World;
         }
 
         public override void Update(GameTime gameTime)
@@ -46,6 +47,6 @@ namespace MyEngine.Entities
 
         }
 
-    /
+    
 }
 }
