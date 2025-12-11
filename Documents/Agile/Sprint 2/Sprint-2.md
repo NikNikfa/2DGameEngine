@@ -63,15 +63,15 @@ Sprint 2 is the point where the project stops being â€œjust a MonoGame projectâ€
 
 Sprint 2 consisted of the following tasks:
 
-1. **Task 1:** Implement [[S2-AssetLoader]]
+1. **Task 1:** Implement [[1-AssetLoader]]
     
-2. **Task 2:** Implement abstract [[S2-Entity]] base class and refactor `Player` to inherit from it
+2. **Task 2:** Implement abstract [[2-Entity]] base class and refactor `Player` to inherit from it
     
-3. **Task 3:** Implement [[S2-EntityManager]]
+3. **Task 3:** Implement [[3-EntityManager]]
     
-4. **Task 4:** Integrate `EngineTime` and `InputManager` into the entity-based architecture ([[S2-Integration]])
+4. **Task 4:** Integrate `EngineTime` and `InputManager` into the entity-based architecture ([[4-Integration]])
     
-5. **Task 5:** Implement [[S2-PlayerMovement]] using `InputManager` and `EngineTime`
+5. **Task 5:** Implement [[5-PlayerMovement]] using `InputManager` and `EngineTime`
     
 6. **(Deferred / Optional)** Task 6: Project structure cleanup and additional folders (scenes, components, etc.)
     

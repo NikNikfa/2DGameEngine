@@ -151,7 +151,7 @@ Future systems (collision, animation, components, physics) can operate on the `E
 
 ## 7. Interaction with EntityManager
 
-This task enables [[S2-EntityManager]] to manage all entities generically:
+This task enables [[3-EntityManager]] to manage all entities generically:
 
 ```csharp
 _entityManager.Add(_player);

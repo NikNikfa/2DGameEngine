@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MyEngine.Core;
+using MyGame.Scenes;
 using MyEngine.Entities;
 
 namespace MyEngine
@@ -9,11 +10,6 @@ namespace MyEngine
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
-
-        private EntityManager _entityManager;
-        private Player _player;
-        private Camera2D _camera;
-
 
 
         public Game1()
@@ -27,9 +23,6 @@ namespace MyEngine
         {
             // TODO: Add your initialization logic here
 
-            _entityManager = new EntityManager();
-
-            _camera = new Camera2D();
 
             base.Initialize();
         }
@@ -37,13 +30,13 @@ namespace MyEngine
         protected override void LoadContent()
         {
             Renderer.Initialize(GraphicsDevice);
-
             AssetLoader.Initialize(Content);
-            var playerTexture = AssetLoader.LoadTexture("Player");
-            _player = new Player(playerTexture, new Vector2(200, 200));
 
-            _entityManager.Add(_player);
+            // Start with the main gameplay scene
+            SceneManager.ChangeScene(new GameScene());
         }
+
+           
 
         protected override void Update(GameTime gameTime)
         {
@@ -57,11 +50,7 @@ namespace MyEngine
             if (InputManager.IsKeyPressed(Keys.Escape))
                 Exit();
 
-            // 4. Update all entities (Player, Enemy, NPCs, etc.)
-            _entityManager.Update(gameTime);
-
-            // Simple follow: center camera on player
-            _camera.Position = _player.Position;
+            SceneManager.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -70,11 +59,17 @@ namespace MyEngine
         {
             Renderer.Clear(Color.CornflowerBlue);
 
-            var viewMatrix = _camera.GetViewMatrix(GraphicsDevice.Viewport);
+            // Ask the current scene for its view matrix.
+            // If there is no scene yet, use identity.
+            Matrix viewMatrix = Matrix.Identity;
 
+            if (SceneManager.CurrentScene != null)
+            {
+                viewMatrix = SceneManager.CurrentScene.GetViewMatrix(GraphicsDevice.Viewport);
+            }
 
             Renderer.Begin(viewMatrix);
-            _entityManager.Draw(Renderer.SpriteBatch);
+            SceneManager.Draw(Renderer.SpriteBatch);
             Renderer.End();
 
             base.Draw(gameTime);
