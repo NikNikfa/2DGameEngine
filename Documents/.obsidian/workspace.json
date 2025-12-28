@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project-Info/Goals.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Goals"
+              "title": "README"
             }
           }
         ]
@@ -182,8 +182,10 @@
   },
   "active": "850f9e34e1c18b1e",
   "lastOpenFiles": [
-    "Project-Info/Vision.md",
     "Project-Info/Goals.md",
+    "README.md",
+    "Untitled",
+    "Project-Info/Vision.md",
     "Project-Info/Future Work.md",
     "Project-Info/Final Documentation.md",
     "Architecture/Layered Architecture.md",
@@ -210,7 +212,6 @@
     "Agile/Sprint 3/7-GameScene.md",
     "Agile/Sprint 3/6-Integrating SceneManager.md",
     "Agile/Sprint 3/5-SceneManager.md",
-    "Agile/Sprint 3/4-Scene.md",
     "Backend Systems",
     "Architecture",
     "MonoGame",
@@ -220,7 +221,6 @@
     "Agile/Sprint 4",
     "Agile/Sprint 3",
     "Agile/Sprint 2",
-    "Agile/Sprint 1",
-    "Implementation/Entities"
+    "Agile/Sprint 1"
   ]
 }
