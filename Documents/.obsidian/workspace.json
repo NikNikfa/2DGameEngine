@@ -11,10 +11,14 @@
             "id": "850f9e34e1c18b1e",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Project-Info/Goals.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Goals"
             }
           }
         ]
@@ -178,9 +182,26 @@
   },
   "active": "850f9e34e1c18b1e",
   "lastOpenFiles": [
-    "Agile/Sprint 3/Sprint-3.md",
+    "Project-Info/Vision.md",
+    "Project-Info/Goals.md",
+    "Project-Info/Future Work.md",
+    "Project-Info/Final Documentation.md",
+    "Architecture/Layered Architecture.md",
+    "Architecture/ECS Architecture.md",
+    "Agile/Sprint 1/S1-EngineTime.md",
+    "Agile/Sprint 4/Sprint-4.md",
+    "Architecture/Static Vs Singleton.md",
+    "Images/Engine system and patterns.png",
+    "Images/High-Level Architecture-UML.png",
+    "Images/Layered Architecture.png",
+    "Agile/Sprint 4/4-CollisionBehavior.md",
+    "Agile/Sprint 4/1-Transform.md",
+    "Agile/Sprint 4/3-CollisionSystem.md",
+    "Agile/Sprint 4/2-Collision.md",
+    "Agile/Product-Backlog.md",
     "Agile/Sprint 1/Sprint-1.md",
     "Agile/Sprint 2/Sprint-2.md",
+    "Agile/Sprint 3/Sprint-3.md",
     "Agile/Sprint 2/1-AssetLoader.md",
     "Agile/Sprint 2/5-PlayerMovement.md",
     "Agile/Sprint 2/4-Integration.md",
@@ -190,33 +211,16 @@
     "Agile/Sprint 3/6-Integrating SceneManager.md",
     "Agile/Sprint 3/5-SceneManager.md",
     "Agile/Sprint 3/4-Scene.md",
-    "Agile/Sprint 3/3-Camera2D.md",
-    "Agile/Sprint 3/1-Renderer.md",
-    "Agile/Sprint 3/2-RenderLayer.md",
-    "Architecture/Static Vs Singleton.md",
-    "Architecture/ECS Architecture.md",
-    "MonoGame/1. MonoGame Framework.md",
     "Backend Systems",
-    "MonoGame/6. Input API.md",
-    "MonoGame/3. SpriteBatch.md",
     "Architecture",
-    "MonoGame/5. Content Pipeline.md",
-    "Agile/Sprint 1/S1-Game1.md",
-    "Agile/Sprint 1/S1-EngineTime.md",
-    "MonoGame/2. Game1.md",
-    "MonoGame/4. GraphicsDevice.md",
     "MonoGame",
-    "Design/High-Level Architecture.md",
     "Images/GameLoop sequance.png",
     "Images/Unconfirmed 53693.crdownload",
-    "Images/Engine system and patterns.png",
-    "Images/Layered Architecture.png",
     "Images/Unconfirmed 28474.crdownload",
     "Agile/Sprint 4",
     "Agile/Sprint 3",
     "Agile/Sprint 2",
     "Agile/Sprint 1",
-    "Implementation/Entities",
-    "Images/High-Level Architecture-UML.png"
+    "Implementation/Entities"
   ]
 }

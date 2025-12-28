@@ -1,7 +1,7 @@
 
 ## Asset and Entity Architecture
 **Project:** 2D Game Engine  
-**Sprint Number:** 2 / 4  
+**Sprint Number:** 2 / ?
 **Status:** Completed (Implementation)  
 **Sprint Type:** Architecture and Core Systems
 **Duration**: November 15, 2025 - November 27, 2025

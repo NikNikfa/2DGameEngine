@@ -13,6 +13,9 @@ namespace MyEngine.Core
     {
         private readonly List<Entity> _entities = new List<Entity>();
 
+        // New: safe read-only access (Sprint 4 Task 2)
+        public IReadOnlyList<Entity> Entities => _entities;
+
         public void Add(Entity entity)
         {
             if (entity == null)

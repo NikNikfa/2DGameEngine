@@ -14,11 +14,20 @@ namespace MyEngine.Entities
     {
         private float _speed = 200f; // units per second
 
+        public Vector2 PreviousPosition { get; private set; }
+
         public Player(Texture2D texture, Vector2 position)
             : base(texture, position)
         {
-            Layer = RenderLayer.World;
+            Layer = RenderLayer.Foreground;
+
+            // Example: smaller collision box than sprite
+            Transform.CollisionSize = new Vector2(texture.Width * 0.4f, texture.Height * 0.6f);
+
+            // Center the collision box inside the sprite
+            Transform.CollisionOffset = (Transform.Size - Transform.CollisionSize) * 0.5f;
         }
+
 
         public override void Update(GameTime gameTime)
         {
@@ -42,7 +51,12 @@ namespace MyEngine.Entities
             if (direction != Vector2.Zero)
             {
                 direction.Normalize();
-                Position += direction * _speed * EngineTime.DeltaTime;
+
+                // Save position BEFORE moving (last safe position)
+                PreviousPosition = Transform.Position;
+
+
+                Transform.Position += direction * _speed * EngineTime.DeltaTime;
             }
 
         }

@@ -11,7 +11,7 @@ namespace MyEngine.Entities
 {
     public abstract class Entity
     {
-        public Vector2 Position { get; set; }
+        public Transform Transform { get; protected set; }
 
         protected Texture2D Texture { get; private set; }
 
@@ -19,11 +19,22 @@ namespace MyEngine.Entities
 
         public RenderLayer Layer { get; set; }
 
+        public bool IsCollidable { get; set; } = true;
+
+        public Rectangle Bounds => Transform.CollisionBounds;
+
+
+
 
         protected Entity(Texture2D texture, Vector2 position)
         {
             Texture = texture;
-            Position = position;
+
+            // Create a Transform using texture size
+            Transform = new Transform(
+                position,
+                new Vector2(texture.Width, texture.Height)
+            );
 
             // Default: most entities are in the world layer
             Layer = RenderLayer.World;
@@ -39,7 +50,7 @@ namespace MyEngine.Entities
             if (!IsActive)
                 return;
 
-            spriteBatch.Draw(Texture, Position, Color.White);
+            spriteBatch.Draw(Texture, Transform.Position, Color.White);
         }
     }
 }

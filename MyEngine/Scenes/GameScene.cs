@@ -15,6 +15,8 @@ namespace MyGame.Scenes
         private EntityManager _entityManager;
         private Player _player;
         private Camera2D _camera;
+        private CollisionSystem _collisionSystem;
+
 
         public override void Load()
         {
@@ -26,8 +28,17 @@ namespace MyGame.Scenes
 
             // Initial player position in world space
             _player = new Player(playerTexture, new Vector2(200, 200));
-
             _entityManager.Add(_player);
+
+            // Temporary obstacle (reuse same texture)
+            var obstacle = new Obstacle(playerTexture, new Vector2(300, 200));
+            _entityManager.Add(obstacle);
+
+            _collisionSystem = new CollisionSystem();
+
+
+
+
         }
 
         public override void Unload()
@@ -46,8 +57,30 @@ namespace MyGame.Scenes
             // Simple camera follow: lock camera to player position
             if (_player != null && _camera != null)
             {
-                _camera.Position = _player.Position;
+                _camera.Position = _player.Transform.Position;
             }
+
+            // central collision detection
+            var collisions = _collisionSystem.GetCollisions(_entityManager.Entities);
+
+
+            bool playerColliding = false;
+
+            foreach (var (a, b) in collisions)
+            {
+                if (a == _player || b == _player)
+                {
+                    playerColliding = true;
+                    break;
+                }
+            }
+
+            // Task 4: basic collision response (block movement)
+            if (playerColliding)
+            {
+                _player.Transform.Position = _player.PreviousPosition;
+            }
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)
